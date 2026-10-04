@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  exa-connect:
+    build:
+      context: .
+    image: exa-connect
+    container_name: exa-connect
+    restart: unless-stopped
+    ports:
+      - 1080:1080
+      - 1081:1081
+    volumes:
+      - ./config.toml:/home/nonroot/config.toml
